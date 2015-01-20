@@ -22,15 +22,6 @@ namespace Store {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// UpdPanelContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdPanelContent;
-        
-        /// <summary>
         /// UpdPanelPages control.
         /// </summary>
         /// <remarks>
@@ -38,5 +29,14 @@ namespace Store {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdPanelPages;
+        
+        /// <summary>
+        /// UpdPanelContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdPanelContent;
     }
 }
