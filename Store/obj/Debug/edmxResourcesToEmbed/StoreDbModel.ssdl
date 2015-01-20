@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cars">
+    <Key>
+      <PropertyRef Name="idCars" />
+    </Key>
+    <Property Name="idCars" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="45" />
+    <Property Name="type" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="idcategory" />
+    </Key>
+    <Property Name="idcategory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="text" />
+    <Property Name="category_idcategory" Type="int" />
+  </EntityType>
+  <EntityType Name="generalinfo">
+    <Key>
+      <PropertyRef Name="idgeneralInfo" />
+      <PropertyRef Name="product_idproduct" />
+    </Key>
+    <Property Name="idgeneralInfo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Key" Type="text" />
+    <Property Name="Value" Type="text" />
+    <Property Name="product_idproduct" Type="int" Nullable="false" />
+    <Property Name="type" Type="enum" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="idproduct" />
+      <PropertyRef Name="category_idcategory" />
+    </Key>
+    <Property Name="idproduct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="text" />
+    <Property Name="price" Type="text" />
+    <Property Name="img" Type="text" />
+    <Property Name="category_idcategory" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_category_category1">
+    <End Role="category" Type="Self.category" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="category1" Type="Self.category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="idcategory" />
+      </Principal>
+      <Dependent Role="category1">
+        <PropertyRef Name="category_idcategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_generalInfo_product' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_generalInfo_product" />-->
+  <Association Name="fk_product_category1">
+    <End Role="category" Type="Self.category" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="product" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="idcategory" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="category_idcategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="cars" EntityType="Self.cars" Schema="e-store" store:Type="Tables" />
+    <EntitySet Name="category" EntityType="Self.category" Schema="e-store" store:Type="Tables" />
+    <EntitySet Name="generalinfo" EntityType="Self.generalinfo" Schema="e-store" store:Type="Tables" />
+    <EntitySet Name="product" EntityType="Self.product" Schema="e-store" store:Type="Tables" />
+    <AssociationSet Name="fk_category_category1" Association="Self.fk_category_category1">
+      <End Role="category" EntitySet="category" />
+      <End Role="category1" EntitySet="category" />
+    </AssociationSet>
+    <AssociationSet Name="fk_product_category1" Association="Self.fk_product_category1">
+      <End Role="category" EntitySet="category" />
+      <End Role="product" EntitySet="product" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

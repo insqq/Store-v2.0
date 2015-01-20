@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="StartMP.master.cs" Inherits="Store.StartMP" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            width: 20%;
+        }
+        .auto-style3 {
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table class="auto-style1">
+                <tr>
+                    <td colspan="2">
+                        <br />
+                        <h1 class="text-center" >
+                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                        </h1> 
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2" style="vertical-align: top">
+                        <asp:Menu CssClass="navbar navbar-fixed" StaticMenuStyle-CssClass="nav"
+                            StaticSelectedStyle-CssClass="active" DynamicMenuStyle-CssClass="dropdown-menu"
+                            ID="menuBar" runat="server">
+                        </asp:Menu>
+                    </td>
+                    <td class="auto-style3" style="vertical-align: top; text-align: left;">
+                        <asp:ContentPlaceHolder ID="MainContentPH" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        &nbsp;</td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

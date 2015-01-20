@@ -1,0 +1,10 @@
+D:\Projects\Store\Store\bin\Store.dll.config
+D:\Projects\Store\Store\bin\Store.dll
+D:\Projects\Store\Store\bin\Store.pdb
+D:\Projects\Store\Store\bin\EntityFramework.dll
+D:\Projects\Store\Store\bin\MySql.Data.dll
+D:\Projects\Store\Store\bin\MySql.Data.Entity.EF6.dll
+D:\Projects\Store\Store\bin\EntityFramework.xml
+D:\Projects\Store\Store\obj\Debug\Store.dll
+D:\Projects\Store\Store\obj\Debug\Store.pdb
+D:\Projects\Store\Store\obj\Debug\Store.csprojResolveAssemblyReference.cache

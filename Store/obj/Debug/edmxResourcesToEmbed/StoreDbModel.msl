@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="StoreDbContext">
+    <EntitySetMapping Name="cars">
+      <EntityTypeMapping TypeName="Model.cars">
+        <MappingFragment StoreEntitySet="cars">
+          <ScalarProperty Name="idCars" ColumnName="idCars" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="category">
+      <EntityTypeMapping TypeName="Model.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="idcategory" ColumnName="idcategory" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="category_idcategory" ColumnName="category_idcategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="generalinfo">
+      <EntityTypeMapping TypeName="Model.generalinfo">
+        <MappingFragment StoreEntitySet="generalinfo">
+          <ScalarProperty Name="idgeneralInfo" ColumnName="idgeneralInfo" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="product_idproduct" ColumnName="product_idproduct" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product">
+      <EntityTypeMapping TypeName="Model.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="idproduct" ColumnName="idproduct" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="category_idcategory" ColumnName="category_idcategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
