@@ -25,11 +25,6 @@ namespace Store
             int pg = (int)((page == null) ? 0 : page);
             double count = l.Count() / 10;
             initButtons(pg, idCategory, count);
-            
-
-            
-
-            
             var productOnPage = l.OrderBy(s=>s).Skip(pg * 10).Take(10);
             foreach (var pID in productOnPage)
             {
@@ -37,8 +32,6 @@ namespace Store
                 pb.id = pID;
                 UpdPanelContent.ContentTemplateContainer.Controls.Add(pb);
             }
-
-
         }
 
         private void initButtons(int page, int idCategory, double count)
@@ -88,7 +81,6 @@ namespace Store
             btn.Attributes.Add("Class", "btn btn-primary");
             UpdPanelPages.ContentTemplateContainer.Controls.Add(btn);
         }
-
         
     }
 }

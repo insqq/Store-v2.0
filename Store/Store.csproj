@@ -113,6 +113,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="UserControls\SearchPanel.ascx" />
     <Content Include="UserControls\ProductBox.ascx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -142,6 +143,13 @@
     </Compile>
     <Compile Include="product.cs">
       <DependentUpon>StoreDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SearchPanel.ascx.cs">
+      <DependentUpon>SearchPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SearchPanel.ascx.designer.cs">
+      <DependentUpon>SearchPanel.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ProductBox.ascx.cs">
       <DependentUpon>ProductBox.ascx</DependentUpon>

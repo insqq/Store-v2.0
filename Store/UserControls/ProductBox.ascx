@@ -25,7 +25,7 @@
 <table class="auto-style1">
     <tr>
         <td class="auto-style2">
-            <asp:ImageButton ID="imgBtn" runat="server" />
+            <asp:ImageButton ID="imgBtn" runat="server" Width="120" Height="120" />
         </td>
         <td class="auto-style3" style="vertical-align: top">
             <table class="auto-style4">

@@ -38,6 +38,9 @@
                             StaticSelectedStyle-CssClass="active" DynamicMenuStyle-CssClass="dropdown-menu"
                             ID="menuBar" runat="server">
                         </asp:Menu>
+                        <br />
+                        <asp:ContentPlaceHolder ID="SearchInfoPH" runat="server">
+                        </asp:ContentPlaceHolder>
                     </td>
                     <td class="auto-style3" style="vertical-align: top; text-align: left;">
                         <asp:ContentPlaceHolder ID="MainContentPH" runat="server">

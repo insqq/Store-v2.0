@@ -28,37 +28,31 @@ namespace Store
 
         private void initBox()
         {
+            // get product information from database
             var context = new StoreDbContext();
             var productInfo = (from c in context.product
                                where c.idproduct == _id
                                select c).Single();
+
+            // init product box
             nameLink.Text = productInfo.name;
             nameLink.NavigateUrl = "";
             imgBtn.ImageUrl = productInfo.img;
-            imgBtn.ImageAlign = ImageAlign.AbsMiddle;
-            imgBtn.Width = 120;
-            imgBtn.Height = 120;
             priceBtn.Text = "" + productInfo.price + "  грн.";
 
-            var productArrs = from c in context.generalinfo
+            // get product attributes from database
+            var d = (from c in context.generalinfo
                               where productInfo.idproduct == c.product_idproduct
                               where c.type == "attr"
-                              select c;
+                              select c).ToDictionary(t=>t.Key, t=>t.Value);
 
-            Dictionary<string, string> d = new Dictionary<string, string>();
-            foreach (var item in productArrs)
-            {
-                d.Add(item.Key, item.Value);
-            }
-            
+            // init Data Grid View by product attributes
             DataGrid dg = new DataGrid();
             dg.ShowHeader = false;
             dg.GridLines = GridLines.None;
             dg.DataSource = d;
             dg.DataBind();
             prodInfoUPD.ContentTemplateContainer.Controls.Add(dg);
-
         }
-
     }
 }
