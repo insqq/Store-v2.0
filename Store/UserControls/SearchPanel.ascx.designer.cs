@@ -13,21 +13,12 @@ namespace Store {
     public partial class SearchPanel {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// mainContentPH control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// ControlContentUPD control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel ControlContentUPD;
+        protected global::System.Web.UI.WebControls.PlaceHolder mainContentPH;
     }
 }

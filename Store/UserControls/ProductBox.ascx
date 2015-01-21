@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProductBox.ascx.cs" Inherits="Store.ProductBox" %>
 <header>
-    <link href="../Content/bootstrap.css" rel="stylesheet" />
 </header>
 <style type="text/css">
     .auto-style1 {
@@ -36,11 +35,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:UpdatePanel ID="prodInfoUPD" runat="server">
-                            <ContentTemplate>
-
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
+                        <asp:PlaceHolder ID="productInfoPH" runat="server"></asp:PlaceHolder>
                     </td>
                 </tr>
                 <tr>

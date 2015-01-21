@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AjaxControlToolkit;
+using System.Web.UI.HtmlControls;
 
 namespace Store
 {
@@ -13,13 +15,11 @@ namespace Store
         {
             menuInit();
             Label1.Text = "PLACEHOLDER";
-
-
         }
 
         private void menuInit()
         {
-            menuBar.Items.Clear();
+            menuBar1.Panes.Clear();
             var context = new StoreDbContext();
             // get categorys from db
             var l = from c in context.category
@@ -32,15 +32,26 @@ namespace Store
                                    select c1
                     };
             // add categorys to menu
+            int i = 1;
             foreach (var item in l)
             {
-                MenuItem mItem = new MenuItem(item.name);
+                AccordionPane mItem = new AccordionPane();
+                mItem.ID = "AcPane" + i;
+                i++;
+                HtmlAnchor title = new HtmlAnchor();
+                title.Attributes.Add("class", "btn btn-primary; margin-top:10px");
+                title.InnerText = item.name;
+                mItem.HeaderContainer.Controls.Add(title);
                 // add subcategorys to menu
                 foreach (var subMenuItem in item.subNames)
                 {
-                    mItem.ChildItems.Add(new MenuItem(subMenuItem.name, "", "", "Search.aspx?id=" + subMenuItem.idcategory.ToString()));
+                    HtmlAnchor hAnchor = new HtmlAnchor();
+                    hAnchor.InnerHtml = "&nbsp&nbsp&nbsp-&nbsp" + subMenuItem.name;
+                    hAnchor.HRef = "Search.aspx?id=" + subMenuItem.idcategory.ToString();
+                    mItem.ContentContainer.Controls.Add(hAnchor);
+                    mItem.ContentContainer.Controls.Add(new LiteralControl("<br />"));
                 }
-                menuBar.Items.Add(mItem);
+                menuBar1.Panes.Add(mItem);
             }
         }
     }

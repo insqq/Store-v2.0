@@ -43,13 +43,13 @@ namespace Store
             {
                 ProductBox pb = (ProductBox)LoadControl("~/UserControls/ProductBox.ascx");
                 pb.id = pID;
-                UpdPanelContent.ContentTemplateContainer.Controls.Add(pb);
+                contentPH.Controls.Add(pb);
             }
 
             // init search parameters
-            /*SearchPanel sp = (SearchPanel)LoadControl("~/UserControls/SearchPanel.ascx");
+            SearchPanel sp = (SearchPanel)LoadControl("~/UserControls/SearchPanel.ascx");
             sp.idCategory = idCategory;
-            SearchPanelUPD.ContentTemplateContainer.Controls.Add(sp);*/
+            searchPanelPH.Controls.Add(sp);
         }
 
         private void initButtons(int page, int idCategory, double count)
@@ -61,7 +61,7 @@ namespace Store
             fBtn.PostBackUrl = "Search.aspx?id=" + idCategory + "&" + "page=" + 0;
             fBtn.Text = "<<";
             fBtn.Attributes.Add("Class", "btn btn-primary");
-            UpdPanelPages.ContentTemplateContainer.Controls.Add(fBtn);
+            pageButtonsPH.Controls.Add(fBtn);
             int start = 0;
             int end = 0;
             if (page + 5 < count) end = page + 5;
@@ -87,7 +87,7 @@ namespace Store
             lBtn.PostBackUrl = "Search.aspx?id=" + idCategory + "&" + "page=" + (count - 1);
             lBtn.Text = ">>";
             lBtn.Attributes.Add("Class", "btn btn-primary");
-            UpdPanelPages.ContentTemplateContainer.Controls.Add(lBtn);
+            pageButtonsPH.Controls.Add(lBtn);
         }
 
         private void addBtn(int i, int idCategory)
@@ -97,7 +97,7 @@ namespace Store
             btn.PostBackUrl = "Search.aspx?id=" + idCategory + "&" + "page=" + i;
             btn.Text = "" + (i + 1);
             btn.Attributes.Add("Class", "btn btn-primary");
-            UpdPanelPages.ContentTemplateContainer.Controls.Add(btn);
+            pageButtonsPH.Controls.Add(btn);
         }
         
     }

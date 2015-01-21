@@ -13,48 +13,30 @@ namespace Store {
     public partial class Search {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// pageButtonsPH control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.PlaceHolder pageButtonsPH;
         
         /// <summary>
-        /// UpdPanelPages control.
+        /// contentPH control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdPanelPages;
+        protected global::System.Web.UI.WebControls.PlaceHolder contentPH;
         
         /// <summary>
-        /// UpdPanelContent control.
+        /// searchPanelPH control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdPanelContent;
-        
-        /// <summary>
-        /// ScriptManager2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager2;
-        
-        /// <summary>
-        /// SearchPanelUPD control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel SearchPanelUPD;
+        protected global::System.Web.UI.WebControls.PlaceHolder searchPanelPH;
     }
 }

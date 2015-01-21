@@ -52,7 +52,7 @@ namespace Store
             dg.GridLines = GridLines.None;
             dg.DataSource = d;
             dg.DataBind();
-            prodInfoUPD.ContentTemplateContainer.Controls.Add(dg);
+            productInfoPH.Controls.Add(dg);
         }
     }
 }
