@@ -19,12 +19,25 @@ namespace Store
             var context = new StoreDbContext();
             int idCategory = Convert.ToInt32(Request.QueryString["id"]);
             int? page = Convert.ToInt32(Request.QueryString["page"]);
+
+            // checking chosen category
+            var catExist = (from c in context.category
+                            where c.idcategory == idCategory
+                            select c).Count();
+            // getting products by chossen category
             var l = from c in context.product
                     where c.category_idcategory == idCategory
                     select c.idproduct;
             int pg = (int)((page == null) ? 0 : page);
             double count = l.Count() / 10;
+            count = (count % 1 == 0) ? count : count++;
+            // checking sellected page and id
+            if (page < 0 || page > count || catExist == 0) Response.Redirect("404.aspx");
+
+            // else init 
+            // page buttons
             initButtons(pg, idCategory, count);
+            // products on page
             var productOnPage = l.OrderBy(s=>s).Skip(pg * 10).Take(10);
             foreach (var pID in productOnPage)
             {
