@@ -45,6 +45,11 @@ namespace Store
                 pb.id = pID;
                 UpdPanelContent.ContentTemplateContainer.Controls.Add(pb);
             }
+
+            // init search parameters
+            /*SearchPanel sp = (SearchPanel)LoadControl("~/UserControls/SearchPanel.ascx");
+            sp.idCategory = idCategory;
+            SearchPanelUPD.ContentTemplateContainer.Controls.Add(sp);*/
         }
 
         private void initButtons(int page, int idCategory, double count)
