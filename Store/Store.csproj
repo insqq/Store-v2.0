@@ -99,26 +99,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.aspx" />
-    <Content Include="App_Themes\Theme1\images\img01.gif" />
-    <Content Include="App_Themes\Theme1\images\img02.gif" />
-    <Content Include="App_Themes\Theme1\images\img03.gif" />
-    <Content Include="App_Themes\Theme1\images\img04.gif" />
-    <Content Include="App_Themes\Theme1\images\img05.gif" />
-    <Content Include="App_Themes\Theme1\images\img06.gif" />
-    <Content Include="App_Themes\Theme1\images\img07.jpg" />
-    <Content Include="App_Themes\Theme1\images\img08.gif" />
-    <Content Include="App_Themes\Theme1\images\img09.gif" />
-    <Content Include="App_Themes\Theme1\images\img10.gif" />
-    <Content Include="App_Themes\Theme1\images\img11.gif" />
-    <Content Include="App_Themes\Theme1\images\img12.gif" />
-    <Content Include="App_Themes\Theme1\images\img13.gif" />
-    <Content Include="App_Themes\Theme1\images\img14.gif" />
-    <Content Include="App_Themes\Theme1\images\img15.gif" />
-    <Content Include="App_Themes\Theme1\images\img16.gif" />
-    <Content Include="App_Themes\Theme1\images\img17.gif" />
-    <Content Include="App_Themes\Theme1\images\img18.gif" />
-    <Content Include="App_Themes\Theme1\images\spacer.gif" />
-    <Content Include="App_Themes\Theme1\Theme1.css" />
     <Content Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -142,7 +122,6 @@
       <DependentUpon>StoreDbModel.edmx</DependentUpon>
       <LastGenOutput>StoreDbModel.cs</LastGenOutput>
     </Content>
-    <Content Include="StartThemeMP.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -201,13 +180,6 @@
     </Compile>
     <Compile Include="product.cs">
       <DependentUpon>StoreDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="StartThemeMP.Master.cs">
-      <DependentUpon>StartThemeMP.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="StartThemeMP.Master.designer.cs">
-      <DependentUpon>StartThemeMP.Master</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SearchPanel.ascx.cs">
       <DependentUpon>SearchPanel.ascx</DependentUpon>

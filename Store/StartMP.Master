@@ -8,6 +8,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Style.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -25,15 +26,40 @@
     <form id="form1" runat="server">
         <ajaxToolkit:ToolkitScriptManager CombineScripts="True" runat="server" ID="ToolkitScriptManager1">
         </ajaxToolkit:ToolkitScriptManager>
-
         <div>
             <table class="auto-style1">
                 <tr>
                     <td colspan="2">
-                        <br />
-                        <h1 class="text-center">
-                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                        </h1>
+                        <table class="nav-justified">
+                            <tr>
+                                <td>
+                                    <br />
+                                    <h1 class="text-center">
+                                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                    </h1>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td style="height: 80px;">
+                                    <div style="position: absolute; left: 50%;">
+                                        <div style="position: relative; left: -50%;">
+                                            <h2>
+                                                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                                                    <Items>
+                                                        <asp:MenuItem Text="New Item" Value="New Item"></asp:MenuItem>
+                                                        <asp:MenuItem Text="New Item" Value="New Item"></asp:MenuItem>
+                                                        <asp:MenuItem Text="New Item" Value="New Item"></asp:MenuItem>
+                                                        <asp:MenuItem Text="New Item" Value="New Item"></asp:MenuItem>
+                                                    </Items>
+                                                </asp:Menu>
+                                            </h2>
+
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                         <br />
                     </td>
                 </tr>
